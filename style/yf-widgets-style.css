@@ -1,0 +1,38 @@
+/**
+ * MESSAGES WIDGET
+ */
+
+ .yf-messages-table {
+  margin: 10px 0;
+ }
+
+.yf-messages-author {
+  width: 20%;
+}
+
+.yf-messages-date {
+  width: 25%;
+}
+
+.yf-messages-message {
+  width: 65%;
+}
+
+.yf-messages-row {
+  cursor: pointer;
+}
+
+.yf-messages-content {
+  height: 19.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+ * CUSTOMIZE WIDGET
+ */
+
+#yf_customize_widget {
+  text-align: center;
+}
