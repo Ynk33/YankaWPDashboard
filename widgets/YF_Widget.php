@@ -20,6 +20,16 @@ class YF_Widget {
   protected static $className = 'YF_Widget';
 
   /**
+   * The context of this widget (normal, side, column3, column4).
+   */
+  protected static $context = 'normal';
+
+  /**
+   * The priority of this widget (high, core, default, low).
+   */
+  protected static $priority = 'default';
+
+  /**
    * Sets up this widget.
    */
   protected static function setup() {
@@ -29,20 +39,25 @@ class YF_Widget {
    * Register this widget.
    */
   public static function register() {
+    // Sets up this widget.
+    static::setup();
+
+    // Hook to wp_dashboard_setup to register this widget.
     add_action( 'wp_dashboard_setup', [ static::$className, 'init' ] );
   }
 
   /**
-   * Hook to wp_dashboard_setup to add the widget.
+   * Hook to wp_dashboard_setup to add this widget.
    */
   public static function init() {
-
-    static::setup();
-
     wp_add_dashboard_widget(
       static::$id,
       esc_html__( static::$title, 'yankaforge' ),
-      [ static::$className, 'render' ]
+      [ static::$className, 'render' ],
+      null,
+      null,
+      static::$context,
+      static::$priority
     );
   }
 

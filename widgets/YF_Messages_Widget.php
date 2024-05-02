@@ -1,6 +1,6 @@
 <?php
 
-// Register this Widget;
+// Register this Widget.
 YF_Messages_Widget::register();
 
 /**
@@ -15,12 +15,17 @@ class YF_Messages_Widget extends YF_Widget {
   /**
    * The title of this widget.
    */
-  protected static $title = 'New Messages';
+  protected static $title = 'Message Box';
 
   /**
    * The class name of this widget.
    */
   protected static $className = 'YF_Messages_Widget';
+
+  /**
+   * The context of this widget (normal, side, column3, column4).
+   */
+  protected static $context = 'column3';
 
   /**
    * The messages to display.
@@ -53,9 +58,11 @@ class YF_Messages_Widget extends YF_Widget {
   public static function render() {
     ?>
 
-      <div>
-        You have <strong><?php echo self::$count; ?></strong> new messages.
-      </div>
+      <h1 class="yf-messages-title">Messages</h1>
+
+      <p class="yf-messages-header <?php echo (self::$count > 0 ? "new" : ""); ?>">
+        You have <strong><?php echo self::$count; ?></strong> new <?php echo _n("message", "messages", self::$count, "yankaforge"); ?>.
+      </p>
 
       <?php if (self::$count > 0) : ?>
       <table class="yf-messages-table wp-list-table widefat fixed striped table-view-list comments">
@@ -79,8 +86,10 @@ class YF_Messages_Widget extends YF_Widget {
         <?php $i++; endforeach; ?>
       </table>
 
-      <a href="<?php echo admin_url('/edit-comments.php?comment_status=moderated'); ?>" class="button">Manage</a>
+      <p><a href="<?php echo admin_url('/edit-comments.php?comment_status=moderated'); ?>" class="button">Manage Unread</a>
       <?php endif; ?>
+
+      <a href="<?php echo admin_url('/edit-comments.php'); ?>" class="button">See All Messages</a></p>
 
     <?php
   }

@@ -1,10 +1,85 @@
 /**
+ * MAINTENANCE WIDGET
+ */
+
+#yf_maintenance_widget button {
+  background-color: transparent;
+  padding: 2px 0;
+
+  border: 3px solid transparent;
+  border-radius: 8px;
+}
+
+#yf_maintenance_widget button:hover {
+  border: 3px solid darkcyan;
+}
+
+#yf_maintenance_widget:has(div form p .yf-maintenance-on.active) {
+  background-color: gold;
+  border: 1px solid black;
+}
+
+#yf_maintenance_widget:has(div form p .yf-maintenance-on.active) .postbox-header {
+  border-bottom: 1px solid black;
+}
+
+.yf-maintenance {
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.yf-maintenance-on, .yf-maintenance-off {
+  padding: 2px 5px;
+  background-color: lightgray;
+  color: darkgrey;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.yf-maintenance-on {
+  border-radius: 5px 0 0 5px;
+}
+
+.yf-maintenance-off {
+  border-radius: 0 5px 5px 0;
+}
+
+.yf-maintenance-on.active {
+  background-color: red;
+  color: white;
+}
+
+.yf-maintenance-off.active {
+  background-color: green;
+  color: white;
+}
+
+.yf-maintenance-message {
+  font-style: italic;
+}
+
+.yf-maintenance-message.active {
+  font-weight: bold;
+}
+
+/**
  * MESSAGES WIDGET
  */
 
- .yf-messages-table {
+.yf-messages-header {
+  padding: 5px;
+}
+
+.yf-messages-header.new {
+  background-color: khaki;
+}
+
+.yf-messages-table {
   margin: 10px 0;
- }
+}
 
 .yf-messages-author {
   width: 20%;
@@ -18,10 +93,6 @@
   width: 65%;
 }
 
-.yf-messages-row {
-  cursor: pointer;
-}
-
 .yf-messages-content {
   height: 19.5px;
   white-space: nowrap;
@@ -32,7 +103,3 @@
 /**
  * CUSTOMIZE WIDGET
  */
-
-#yf_customize_widget {
-  text-align: center;
-}
