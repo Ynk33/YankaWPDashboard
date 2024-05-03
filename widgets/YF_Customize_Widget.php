@@ -42,7 +42,7 @@ class YF_Customize_Widget extends YF_Widget {
     <h2>Pictures</h2>
 
     <ul>
-      <li><a href="<?php echo admin_url( "post.php?post=101&action=edit" ); ?>" class="button">Modify the highlights</a></li>
+      <li><a href="<?php echo admin_url( "post.php?post=248&action=edit" ); ?>" class="button">Modify the highlights</a></li>
       <li><a href="<?php echo admin_url( "edit.php?post_type=gallery" ); ?>" class="button">Modify the galleries</a></li>
     </ul>
 
