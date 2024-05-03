@@ -66,6 +66,59 @@
 }
 
 /**
+ * CHECK GALLERIES WIDGET
+ */
+
+ #yf_check_galleries_widget:has(.yf-check-galleries-message.error) {
+  background-color: gold;
+  border: 1px solid black;
+}
+
+#yf_check_galleries_widget:has(.yf-check-galleries-message.warning) {
+ background-color: khaki;
+ border: 1px solid black;
+}
+
+#yf_check_galleries_widget:has(.yf-check-galleries-message.error) .postbox-header,
+#yf_check_galleries_widget:has(.yf-check-galleries-message.warning) .postbox-header {
+  border-bottom: 1px solid black;
+}
+
+.yf-check-galleries.centered {
+  text-align: center;
+}
+
+.yf-check-galleries-message {
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.yf-check-galleries-message.info {
+  background-color: teal;
+}
+
+.yf-check-galleries-message.ok {
+  background-color: green;
+}
+
+.yf-check-galleries-message.warning {
+  background-color: orange;
+}
+
+.yf-check-galleries-message.error {
+  background-color: red;
+}
+
+.yf-check-galleries-advices {
+  margin-top: 20px;
+  border: 2px solid darkslategray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/**
  * MESSAGES WIDGET
  */
 
@@ -99,7 +152,3 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-/**
- * CUSTOMIZE WIDGET
- */

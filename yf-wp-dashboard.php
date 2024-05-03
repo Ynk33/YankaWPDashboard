@@ -21,6 +21,7 @@ add_action( 'admin_enqueue_scripts', 'yf_widgets_enqueue_styles' );
 // Widgets to include.
 $widgets = [
   "Maintenance",
+  "Check_Galleries",
   "Customize",
   "Messages",
 ];

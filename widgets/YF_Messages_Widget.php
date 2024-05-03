@@ -58,8 +58,6 @@ class YF_Messages_Widget extends YF_Widget {
   public static function render() {
     ?>
 
-      <h1 class="yf-messages-title">Messages</h1>
-
       <p class="yf-messages-header <?php echo (self::$count > 0 ? "new" : ""); ?>">
         You have <strong><?php echo self::$count; ?></strong> new <?php echo _n("message", "messages", self::$count, "yankaforge"); ?>.
       </p>

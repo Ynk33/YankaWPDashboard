@@ -16,7 +16,7 @@ class YF_Maintenance_Widget extends YF_Widget {
   /**
    * The title of this widget.
    */
-  protected static $title = 'Maintenance';
+  protected static $title = 'Maintenance Mode';
 
   /**
    * The class name of this widget.
@@ -54,8 +54,6 @@ class YF_Maintenance_Widget extends YF_Widget {
     
     $maintenanceMod = get_theme_mod('yf_maintenance_toggle');
     ?>
-
-    <h1>Maintenance Mode</h1>
 
     <form method="POST" action="<?php echo admin_url( 'admin.php' ); ?>">
       <input type="hidden" name="action" value="<?php echo self::$action; ?>"/>
