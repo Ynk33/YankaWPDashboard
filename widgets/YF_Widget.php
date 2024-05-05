@@ -4,6 +4,12 @@
  * Abstract class to create new widgets.
  */
 class YF_Widget {
+
+  /**
+   * The registered custom widgets.
+   */
+  protected static $yf_widgets = [];
+
   /**
    * The ID of this widget.
    */
@@ -44,6 +50,9 @@ class YF_Widget {
 
     // Hook to wp_dashboard_setup to register this widget.
     add_action( 'wp_dashboard_setup', [ static::$className, 'init' ] );
+
+    // Save the registered widget.
+    self::save(static::$id, static::$context, static::$priority);
   }
 
   /**
@@ -65,5 +74,12 @@ class YF_Widget {
    * Renders this widget.
    */
   public static function render() {
+  }
+
+  /**
+   * Saves a registered custom widget.
+   */
+  private static function save($id, $context, $priority) {
+    self::$yf_widgets[] = $id;
   }
 }

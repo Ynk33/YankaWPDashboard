@@ -24,6 +24,7 @@ $widgets = [
   "Check_Galleries",
   "Customize",
   "Messages",
+  "Dashboard_Cleanup",
 ];
 
 // Includes the custom widgets.
