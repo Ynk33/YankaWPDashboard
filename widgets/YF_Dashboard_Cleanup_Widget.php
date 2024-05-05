@@ -25,11 +25,6 @@ class YF_Dashboard_Cleanup_Widget extends YF_Widget {
   protected static $id = 'yf_dashboard_cleanup_widget';
 
   /**
-   * The title of this widget.
-   */
-  protected static $title = 'Dashboard Cleanup';
-
-  /**
    * The class name of this widget.
    */
   protected static $className = 'YF_Dashboard_Cleanup_Widget';
@@ -45,8 +40,7 @@ class YF_Dashboard_Cleanup_Widget extends YF_Widget {
   protected static $priority = 'high';
 
   /**
-   * Init this widget.
-   * Remove non-custom widgets from the dashboard.
+   * Remove the unwanted widgets from the dashboard.
    */
   public static function init() {
     global $wp_meta_boxes;

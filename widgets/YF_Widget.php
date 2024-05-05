@@ -36,6 +36,11 @@ class YF_Widget {
   protected static $priority = 'default';
 
   /**
+   * Hook to register this widget to.
+   */
+  protected static $hookAction = 'wp_dashboard_setup';
+
+  /**
    * Sets up this widget.
    */
   protected static function setup() {
@@ -48,8 +53,8 @@ class YF_Widget {
     // Sets up this widget.
     static::setup();
 
-    // Hook to wp_dashboard_setup to register this widget.
-    add_action( 'wp_dashboard_setup', [ static::$className, 'init' ] );
+    // Hook to $hookAction to register this widget.
+    add_action( static::$hookAction, [ static::$className, 'init' ] );
 
     // Save the registered widget.
     self::save(static::$id, static::$context, static::$priority);
