@@ -3,6 +3,9 @@
 // Register this widget.
 YF_Admin_Menu_Cleanup_Widget::register();
 
+/**
+ * Widget to clean the Admin Menu.
+ */
 class YF_Admin_Menu_Cleanup_Widget extends YF_Widget {
   /**
    * The ID of this widget.
@@ -34,7 +37,6 @@ class YF_Admin_Menu_Cleanup_Widget extends YF_Widget {
    * Removes the unwanted menu entries from the admin menu.
    */
   public static function init() {
-
     global $wp_admin_bar;
 
     $nodes = $wp_admin_bar->get_nodes();

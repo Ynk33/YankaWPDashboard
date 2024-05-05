@@ -26,6 +26,7 @@ $widgets = [
   "Messages",
   "Dashboard_Cleanup",
   "Admin_Menu_Cleanup",
+  "Admin_Menu_Bar_Cleanup",
 ];
 
 // Includes the custom widgets.

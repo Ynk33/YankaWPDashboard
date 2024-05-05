@@ -41,6 +41,11 @@ class YF_Widget {
   protected static $hookAction = 'wp_dashboard_setup';
 
   /**
+   * Priority for the hook which this widget has to be registered on.
+   */
+  protected static $hookPriority = 10;
+
+  /**
    * Sets up this widget.
    */
   protected static function setup() {
@@ -54,7 +59,7 @@ class YF_Widget {
     static::setup();
 
     // Hook to $hookAction to register this widget.
-    add_action( static::$hookAction, [ static::$className, 'init' ] );
+    add_action( static::$hookAction, [ static::$className, 'init' ], static::$hookPriority );
 
     // Save the registered widget.
     self::save(static::$id, static::$context, static::$priority);
