@@ -72,6 +72,8 @@ class YF_Admin_Menu_Bar_Cleanup_Widget extends YF_Widget {
   private static function cleanMenu() {
     global $menu;
 
+    if (empty($menu)) return;
+
     $allowedEntries = self::$allowedMenuEntries;
     if (current_user_can( "administrator" )) {
       $allowedEntries = array_merge($allowedEntries, self::$allowedMenuEntriesAsAdmin);
